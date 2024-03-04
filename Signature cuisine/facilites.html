@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <!--header start-->
+    <header class="header">
+        <section class="flex">
+            <a href="index.php" class="logo">Signature Cusine</a>
+
+            <nav class="navbar">
+                <a href="index.php">home</a>
+                <a href="about.html">About</a>
+                <a href="menu.php">Menu</a>
+                <a href="orders.php">Orders</a>
+                <a href="facilites.html">Facility</a>
+                <a href="Reservation.php">Reservations</a>
+            </nav>
+
+            <div class="icons">
+                <a href="search.php"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><span></span></a>
+                <div id="user-btn" class="fa-solid fa-user"></div>
+                <div id="menu-btn" class="fa-solid fa-bars"></div>
+                </div>
+                
+                <div class="profile">
+                    <p class="name">Signature Cusine</p>
+                    <div class="flex">
+                        <a href="profile.php" class="btn">profile</a>
+                        <a href="#" class="delete-btn">Logout</a>
+                    </div>
+                    <p class="account"><a href="login.php">Login</a> or <a href="register.php">Rejister</a></p>
+                </div>
+        </section>
+     </header>
+     <!--header end-->
+    
+    <div class="heading">
+        <h3>Facilites</h3>
+        <p><a href="index.php">Home</a>  / Facilites<span></span></p>
+    </div>
+
+    <!--facility start-->
+    <section class="facility">
+        <div class="fac-row">
+            <div class="fac-image">
+                <img src="images/bar.png" alt="">
+            </div>
+            <div class="fac-content">
+                <h3>Pub Facilitie</h3>
+                <p>Having a bar facility in a restaurant can be a significant asset, offering various advantages.
+                   It not only enhances the overall dining experience by providing a vibrant and social atmosphere but also increases the restaurant's revenue through the sale of a diverse range of beverages.
+                   The presence of a bar can encourage customers to spend more time in the establishment, leading to increased sales and profitability.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="facility">
+        <div class="fac-row">
+            <div class="fac-image">
+                <img src="images/pool table.png" alt="">
+            </div>
+            <div class="fac-content">
+                <h3>Pool Table</h3>
+                <p>Incorporating a pool table facility within a restaurant can offer several advantages.
+                   Beyond providing an additional form of entertainment, it can elevate the overall customer experience, encouraging patrons to spend more time at the establishment.
+                   This can lead to increased food and beverage sales, contributing to higher profitability.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="facility">
+        <div class="fac-row">
+            <div class="fac-image">
+                <img src="images/playing area.png" alt="">
+            </div>
+            <div class="fac-content">
+                <h3>Playing area</h3>
+                <p>Having a dedicated playing area within a restaurant can be highly beneficial, particularly for families and young diners.
+                   Such an area not only provides a safe and engaging space for children to play but also allows parents to enjoy their meals more comfortably. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--footer start-->
+     <?php include 'components/footer.php'  
+     ?> 
+     
+     
+ 
+    <script src="JS/Script.js"></script>
+</body>
+</html>

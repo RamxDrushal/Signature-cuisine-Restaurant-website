@@ -1,0 +1,946 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+* {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+*::selection {
+    background-color: black;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    height: 5rem;
+    width: 1rem;
+
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+}
+
+html {
+    font-size: 70%;
+    overflow-x: hidden;
+}
+
+section {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.btn,
+.delete-btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: .3s linear;
+}
+
+.delete-btn {
+    background-color: steelblue;
+    color: black;
+}
+
+.btn {
+    background-color: tomato;
+    color: black;
+}
+
+.btn:hover,
+.delete-btn:hover {
+    letter-spacing: .2rem;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-flow: column;
+    background-color: ghostwhite;
+    min-height: 10rem;
+}
+
+.heading h3 {
+    font-size: 3rem;
+    color: black;
+    text-transform: capitalize;
+}
+
+.heading p {
+    font-size: 1.5rem;
+}
+
+.heading p a {
+    color: black;
+}
+
+.heading p a:hover {
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+
+
+.title {
+    margin-top: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: black;
+}
+
+.empty {
+    border-style: groove;
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    color: brown;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.message {
+    position: sticky;
+    top:0;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: darkgrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 2rem;
+
+}
+
+.message span {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.message i {
+    font-size: 1.5rem;
+    color: red;
+    cursor: pointer;
+    transition: 2s linear;
+}
+
+.message i:hover {
+    transform: rotate(90deg);
+}
+
+.header {
+    position: sticky;
+    top: 0; right: 0; left: 0;
+    z-index: 1000;
+    background-color: antiquewhite;
+    border-bottom: 0cm;
+}
+
+.header .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header .flex .logo {
+    font-size: 2.4rem;
+    color: black;
+}
+
+.header .flex .navbar a{
+    font-size: 1.4rem;
+    color: black;
+    margin: 0.3rem;
+}
+
+.header .flex .navbar a:hover {
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+.header .flex .icons > * {
+    margin-left: 0.8rem;
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+}
+
+.header .flex .icons span { 
+    font-size: 1.2rem;
+}
+
+.header .flex .icons > *:hover {
+    color: blueviolet;
+}
+
+.header .flex .profile {
+    background-color: antiquewhite;
+    padding: 0.5rem;
+    text-align: center;
+    position: absolute;
+    top: 120%; right: 2rem;
+    width: 15rem;
+    display: none;
+    animation: fadeIn .2s linear;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(1rem);
+    }
+}
+
+.header .flex .profile.active {
+    display: inline-block;
+}
+
+.header .flex .profile .name {
+    font-size: 1.2rem;  
+    color: black;
+    margin-top: 0.2rem;
+}
+
+.header .flex .profile .account {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.header .flex .profile .account a {
+    color: black;
+}
+
+.header .flex .profile .account a:hover {
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+#menu-btn {
+    display: none;
+}
+
+.hero .slide {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.hero .slide .image {
+    flex: 1 1 40rem;
+}
+
+.hero .slide .image img {
+    width: 80%;
+}
+
+.hero .slide .content {
+    flex: 1 1 55rem;
+    text-align: center;
+}
+
+.hero .slide .content span {
+    font-size: 2rem;
+    color: black;
+}
+
+.hero .slide .content h3 {
+    margin: 1rem 0;
+    font-size: 4rem;
+    color: black;
+    text-transform: capitalize;
+}
+
+.category .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.category .box-container .box {
+    padding: 2rem;
+    text-align: center;
+}
+
+.category .box-container .box img {
+    width: 100%;
+    height: 30rem;
+    object-fit: contain;
+}
+
+.category .box-container .box h3 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    color: black;
+    text-transform: capitalize;
+}
+
+.category .box-container .box:hover {
+    background-color: ghostwhite;
+}
+
+.category .box-container .box:hover h3 {
+    cursor: pointer;
+}
+
+.products .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+.products .box-container .box {
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+.products .box-container .box .image {
+    height: 20rem;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.products .box-container .box .fa-eye,
+.products .box-container .box .fa-shopping-cart {
+    position: absolute;
+    top: 1rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.3rem;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: black;
+}
+
+.products .box-container .box .fa-eye:hover,
+.products .box-container .box .fa-shopping-cart:hover {
+    background-color: white;
+}
+
+.products .box-container .box .fa-eye {
+    left: 2rem;
+}
+
+.products .box-container .box .fa-shopping-cart {
+    right: -1rem;
+}
+
+.products .box-container .box:hover .fa-eye {
+    left: 1rem;
+}
+
+.products .box-container .box:hover .fa-shopping-cart {
+    right: 1rem;
+}
+
+.products .box-container .box .cat {
+    font-size: 1.7rem;
+    color: black;
+}
+
+.products .box-container .box .cat:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.products .box-container .box .name {
+    font-size: 1.2rem;
+    color: black;
+    margin: 0.5rem 0;
+}
+
+.products .box-container .box .flex {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.products .box-container .box .flex .price {
+    margin-right: auto;
+    font-size: 1.1rem;
+    color: black;
+}
+
+.products .box-container .box .flex .price span {
+    color: black;
+    font-size: 1.3rem;
+}
+
+.products .box-container .box .flex .qty {
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.products .box-container .box .fa-times {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    height: 4,5rem;
+    width: 4.5rem;
+    cursor: pointer;
+    background-color: red;
+    border-style: groove;
+    line-height: 4,3rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.products .box-container .box .fa-times:hover {
+    background-color: black;
+    color: white;
+}
+
+.products .box-container .box .flex .fa-edit {
+    font-size: 1.3rem;
+    width: 5rem;
+    background-color: white;
+    height: 4rem;
+}
+
+.products .box-container .box .sub-total {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: thistle;
+}
+
+.products .box-container .box .sub-total span {
+    color: darkgrey;
+}
+
+
+.products .box-container .box .flex .fa-edit:hover {
+    background-color: bisque;
+    color: white;
+}
+    
+
+.products .box-container .box .fa-times {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    height: 4,5rem;
+    width: 4.5rem;
+    cursor: pointer;
+    background-color: red;
+    border-style: groove;
+    line-height: 2rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.products .box-container .box .fa-times:hover {
+    background-color: black;
+    color: white;
+}
+
+.products .more-btn {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.products .cart-total {
+    border-style: groove;
+    padding: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.products .cart-total .grand-total {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: black;
+}
+
+.products .cart-total .grand-total span {
+    color: black;
+}
+
+.quick-view .box {
+    margin: 0 auto;
+   max-width: 50rem;
+   border-style: groove;
+   padding: 2rem;
+}
+
+.quick-view .box .image {
+    width: 100%;
+    height: 30rem;
+    object-fit: contain;
+    margin-top: 1rem;
+}
+
+.quick-view .box .cat {
+    font-size: 1.8rem;
+    color: slategrey;
+}
+
+.quick-view .box .cat:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.quick-view .box .name {
+    font-size: 1.5rem;
+    color: black;
+    margin: 1rem 0;
+}
+
+.quick-view .box .cart-btn {
+    width: 100%;
+    border-style: groove;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.quick-view .box .cart-btn:hover {
+    background-color: blueviolet;
+}
+
+.quick-view .box .flex {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.quick-view .box .flex .price {
+    margin-right: auto;
+    font-size: 1.1rem;
+    color: black;
+}
+
+.quick-view .box .flex .price span {
+    color: black;
+    font-size: 1.3rem;
+}
+
+.quick-view .box .flex .qty {
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.form-container form {
+    margin: 0 auto;
+    max-width: 40rem;
+    border-style: double;
+    padding: 2rem;
+    text-align: center;
+}
+
+.form-container form h3 {
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.form-container form .box {
+    margin: .7rem 0;
+    width: 100%;
+    border-style:groove;
+    padding: 1.4rem;
+    font-size: 1.5rem;
+}
+
+.form-container form p {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+}
+
+.form-container form p a {
+    color: chocolate;
+}
+
+.form-container form p a:hover {
+    text-decoration: underline;
+}
+
+.user-profile .box {
+    max-width: 50rem;
+    margin: 0 auto;
+    border-style: solid;
+    padding: 2rem;
+}
+
+.user-profile .box img {
+    width: 100%;
+    height: 30rem;
+    object-fit: contain;
+    margin-top: 1rem;
+}
+
+.user-profile .box p {
+    padding: 1rem;
+    line-height: 1.5;
+    font-size: 1.3rem;  
+}
+
+.user-profile .box p {
+    margin-top: 1rem;   
+}
+
+.user-profile .box {
+    max-width: 50rem;
+    margin: 0 auto;
+    border-style: solid;
+    padding: 2rem;
+}
+
+.user-profile .box img {
+    width: 100%;
+    height: 30rem;
+    object-fit: contain;
+    margin-top: 1rem;
+}
+.user-profile .box p {
+    padding: 1rem;
+    line-height: 1.5;
+    font-size: 1.3rem;  
+}
+
+.user-profile .box p {
+    margin-top: 1rem;   
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.about .row .image {
+    flex: 1 1 40rem;
+}
+
+.about .row .image img {
+    width: 50%;
+}
+
+.about .row .content {
+    flex: 1 1 40rem;
+    text-align: center;
+}
+
+.about .row .content h3 {
+    font-size: 2rem;
+    color: black;
+    text-transform: capitalize;
+    margin-top: auto;
+}
+
+.about .row .content p {
+    padding: 1rem 0;
+    line-height: 2;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.steps .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.steps .box-container .box {
+    text-align: center;
+    border-radius: 0%;
+    padding: 2rem;
+}
+
+.steps .box-container .box img {
+    height: 25rem;
+    width: 100%;
+    object-fit: contain;
+}
+
+.steps .box-container .box h3 {
+    font-size: 2.1rem;
+    margin: auto;
+    color: black;
+    text-transform: capitalize;
+}
+
+.steps .title {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.reviews .slide {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.reviews .slide img {
+    height: 18rem;
+    width: auto;
+    margin-top: 1rem;
+}
+
+.reviews .slide p {
+    padding: 1rem 0;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    color: brown;
+}
+
+.reviews .slide p {
+    padding: 1rem 0;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    color: brown;
+}
+
+.reviews .slide .stars i {
+    font-size: 1rem;
+    color: black
+}
+
+.reviews .slide h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: black;
+    text-transform: capitalize;
+}
+
+.reviews .title {
+    font-size: 2.5rem;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.search-form form {
+    display: flex;
+    gap: 1rem;
+}
+
+.search-form form .box {
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.search-form form .fa-search {
+    width: 5rem;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.search-form form .fa-search:hover {
+    background-color: bisque;
+    color: black;
+}
+
+.checkout form {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.checkout form .cart-items {
+    background-color: bisque;
+    padding: 2rem;
+}
+
+.checkout form .cart-items h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: black;
+    text-transform: capitalize;
+}
+
+.checkout form .cart-items p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    margin: 1rem 0;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+.checkout form .cart-items p .price {
+    color: blue;
+}
+
+.checkout form .cart-items .grand-total {
+    background-color: bisque;
+    padding: 1.5rem;
+}
+
+.checkout form .cart-items .grand-total .price {
+    color: brown;
+}
+
+.checkout form .user-info h3 {
+    margin: 1rem 0;
+    text-transform: capitalize;
+    font-size: 2rem;
+    color: black;
+}
+
+.checkout form .user-info p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    padding: 1rem 0;
+}
+
+.checkout form .user-info p i {
+    margin-right: 1rem;
+}
+
+.checkout form .user-info p span {
+    color: black;
+}
+
+.checkout form .user-info .select-box {
+    margin: 1rem 0;
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.orders .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.orders .box-container .box {
+    padding: 1rem 2rem;
+    flex: 1 1 40rem;
+}
+
+.orders .box-container .box p {
+    line-height: 1.5;
+    margin: .5rem 0;
+    font-size: 1.3rem;
+    color: slategray;
+}
+
+.orders .box-container .box p span {
+    color: black;
+}
+
+.facility .fac-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.facility .fac-row .fac-image {
+    flex: 1 1 40rem;
+}
+
+.facility .fac-row .fac-image img {
+    width: 90%;
+}
+
+.facility .fac-row .fac-content {
+    flex: 1 1 40rem;
+    text-align: center;
+}
+
+.facility .fac-row .fac-content h3 {
+    font-size: 2rem;
+    color: black;
+    text-transform: capitalize;
+    margin-top: auto;
+}
+
+.facility .fac-row .fac-content p {
+    padding: 1rem 0;
+    line-height: 2;
+    font-size: 1.2rem;
+    color: black;
+}
+
+
+    
+
+
+.footer .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 1.5rem;
+        align-items: flex-start;
+}
+
+.footer .grid .box {
+        padding: 2rem;
+        text-align: center;
+}
+
+.footer .grid .box img {
+        height: 10rem; 
+        width: 100px;
+        object-fit: contain;
+        margin-top: 3rem; 
+}
+
+.footer .grid .box h3 {
+        margin: 1rem 0;
+        font-size: 2rem;
+        color: black;
+        text-transform: capitalize;
+}
+
+.footer .grid .box p,
+.footer .grid .box a {
+        display: block;
+        font-size: 1.2rem;
+        color: black;
+        line-height: 1.5;
+}
+
+.footer .grid .box a:hover {
+        text-decoration: underline;
+}
+
+.credit {
+    padding: 2rem;
+    text-align: center;
+    background-color: antiquewhite;
+    color: black;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+
+
+
+
